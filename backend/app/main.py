@@ -23,6 +23,7 @@ app.add_middleware(
 
 @app.get("/")
 def root():
+
     return {
         "message": "AI Interview Agent Backend is running!"
     }
@@ -30,6 +31,7 @@ def root():
 
 @app.get("/health")
 def health_check():
+
     return {
         "status": "ok"
     }
