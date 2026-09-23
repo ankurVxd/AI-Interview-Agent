@@ -6,6 +6,7 @@ from app.routes.session import router as session_router
 from app.routes.resume import router as resume_router
 from app.routes.job import router as job_router
 from app.routes.question import router as question_router
+from app.routes.interview_config import router as interview_config_router
 app = FastAPI(
     title="AI Interview Agent API",
     description="Backend API for the Agentic AI Interview System",
@@ -36,6 +37,11 @@ app.include_router(
     question_router,
     prefix="/question",
     tags=["Question Generation"]
+)
+app.include_router(
+    interview_config_router,
+    prefix="/interview",
+    tags=["Interview Configuration"]
 )
 app.add_middleware(
     CORSMiddleware,
